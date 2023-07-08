@@ -22,6 +22,7 @@ pipeline {
         
         stage('Test Website') {
             steps {
+                bat 'echo "Running website tests"'
                 // Add your test steps here
             }
         }
