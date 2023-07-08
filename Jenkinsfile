@@ -16,7 +16,7 @@ pipeline {
         
         stage('Build and Publish') {
             steps {
-                bat 'xcopy /E /I * "C:\\ProgramData\\Jenkins\\workspace\\Push to Prod"'
+                bat 'xcopy /E /I . "C:\\ProgramData\\Jenkins\\workspace\\Push to Prod"'
             }
         }
         
