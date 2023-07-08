@@ -1,33 +1,15 @@
 pipeline {
-    agent {
-        docker {
-            image 'ubuntu:latest'
-            args '-p 82:80'
-        }
-    }
+    agent any
     
     stages {
-        stage('Build and Publish') {
-            when {
-                anyOf {
-                    branch 'master'
-                    branch 'develop'
-                }
-            }
+        stage('Pull Git Content') {
             steps {
-                checkout scm
-                script {
-                    if (env.BRANCH_NAME == 'master') {
-                        // Build and publish website on port 82
-                        sh 'mvn clean install'
-                        sh 'cp -R target/* /var/www/html'
-                        sh 'service apache2 start'
-                    } else if (env.BRANCH_NAME == 'develop') {
-                        // Only build for the develop branch
-                        sh 'mvn clean install'
-                    }
-                }
+                git branch: 'master', url: 'https://github.com/dsahu87/git-repo.git'
+                sh 'cp -r * /var/www/html'
             }
         }
+        
+        // Add additional stages as needed for your pipeline steps
+        // For example, you can include stages for building, testing, deploying, etc.
     }
 }
