@@ -2,14 +2,28 @@ pipeline {
     agent any
     
     stages {
-        stage('Pull Git Content') {
+        stage('Checkout SCM') {
             steps {
-                git branch: 'master', url: 'https://github.com/dsahu87/git-repo.git'
-                sh 'cp -r * /var/www/html'
+                checkout scm
             }
         }
         
-        // Add additional stages as needed for your pipeline steps
-        // For example, you can include stages for building, testing, deploying, etc.
+        stage('Pull Git Content') {
+            steps {
+                bat 'git pull origin master'
+            }
+        }
+        
+        stage('Build and Publish') {
+            steps {
+                bat 'xcopy /E /I * "C:\\ProgramData\\Jenkins\\workspace\\Push to Prod"'
+            }
+        }
+        
+        stage('Test Website') {
+            steps {
+                // Add your test steps here
+            }
+        }
     }
 }
