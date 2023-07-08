@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'httpd:latest'
+            image 'ubuntu:latest'
             args '-p 82:80'
         }
     }
