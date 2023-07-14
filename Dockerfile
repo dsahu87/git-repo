@@ -4,8 +4,8 @@ FROM ubuntu
 RUN apt-get update && apt-get install -y apache2
 
 # Replace default index.html with new index.html
-# RUN rm /var/www/html/index.html
-# ADD ./index.html /var/www/html/
+RUN rm /var/www/html/index.html
+ADD ./index.html /var/www/html/
 
 # Expose port 82
 EXPOSE 82
