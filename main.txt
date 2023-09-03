@@ -1,3 +1,2 @@
-CAPSTONE
-
+CI/CD
 This is the main text file
