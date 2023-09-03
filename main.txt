@@ -1,2 +1,2 @@
-CI/CD
+CI/CD: Detected
 This is the main text file
