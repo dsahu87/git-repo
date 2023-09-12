@@ -1,2 +1,2 @@
-CI/CD: Detected
+CAPSTONE2
 This is the main text file
