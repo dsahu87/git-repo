@@ -1,2 +1,2 @@
-CAPSTONE2
+CAPSTONE2: push to dockerhub !!
 This is the main text file
