@@ -1,2 +1,2 @@
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxx
 This is the main text file
