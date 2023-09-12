@@ -1,4 +1,2 @@
-CAPSTONE2: push to dockerhub !
-
-Patience need more always!
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 This is the main text file
