@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application # change name as demand
+spec:
+  replicas: 2  # Adjust based on your requirements
+  selector:
+    matchLabels:
+      app: application
+  template:
+    metadata:
+      labels:
+        app: application
+    spec:
+      containers:
+      - name: docker-container_name # change name as demand
+        image: <docker_image_name:latest>
+        ports:
+        - containerPort: 80 # change port number as fixed
