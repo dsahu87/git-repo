@@ -13,7 +13,8 @@ spec:
         app: application
     spec:
       containers:
-      - name: docker-container_name # change name as demand
-        image: <docker_image_name:latest>
+      - name: evaluation # change name as demand
+        image: dsahu87/evaluation:latest
+        imagePullPolicy: Always
         ports:
-        - containerPort: 80 # change port number as fixed
+          - containerPort: 80
