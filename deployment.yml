@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: application # change name as demand
+  name: application # change name as required
 spec:
   replicas: 2  # Adjust based on your requirements
   selector:
