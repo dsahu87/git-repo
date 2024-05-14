@@ -19,7 +19,9 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-artifacts:
-    files: imagedefinitions.json
+     # Setup kubectl with our EKS Cluster
+      - aws eks update-kubeconfig --name mirror333 --region us-east-1
+      - echo Push the latest image to cluster
+      # Apply changes to our Application using kubectl
+      - kubectl apply -f deployment.yml
+      - kubectl apply -f service.yml
