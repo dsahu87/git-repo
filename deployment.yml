@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: evaluation # change name as demand
-        image: dsahu87/evaluation:latest
+        image: 771672242837.dkr.ecr.us-east-1.amazonaws.com/cap-2:latest
         imagePullPolicy: Always
         ports:
           - containerPort: 80
